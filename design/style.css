@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+nav a, nav li{
+    color:black
+}
+h1{
+    font-size: 40px;
+    font-family:  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 40px 0 10px;
+    text-align: center;
+}
+h2{
+    margin: 0.83em 0 0 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+ul{
+    margin:15 0 0 0;
+    /* margin: haut droite bas gauche; */
+    /* si le bas n'est pas donné alors il est egal au haut et si la gauche n'est pas donné alors égal a droite */
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+}
+header{
+   text-align: center;
+   font-size: 70px;
+   font-family: fantasy;
+   color: white;
+   text-shadow: 0 0 50px black;
+}
+footer{
+    /* background-image: url("https://tse3.mm.bing.net/th/id/OIP.fJlvZYFU_tVhy8-gEA_kVwHaH0?rs=1&pid=ImgDetMain&o=7&rm=3"); 
+    background-size: 100px;
+    background-repeat: repeat-x;
+    height: 500px;
+    background-color: wheat ; */
+    background: left/100px url("https://tse3.mm.bing.net/th/id/OIP.fJlvZYFU_tVhy8-gEA_kVwHaH0?rs=1&pid=ImgDetMain&o=7&rm=3s"),brown;
+    font-size: 15px;
+    margin-top: 40px;
+    padding: 15px;
+
+}
+#flexbox-foot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.mot{
+    color:pink;
+}
+.italic{
+    font-style:italic;
+}
+.underline{
+text-decoration:underline;
+}
+.bold{
+    font-weight: bold;
+}
+.contenu{
+    padding: 10px;
+}
+.conteneur{
+    width: 1300px;
+    margin: auto;
+}
+/* LE RESPONSIVE DISIGN */
+/* 1300: notebook */
+@media all and (max-width: 1350px){
+    .conteneur{
+        width: 800px;
+    }
+     #flexbox-ville{
+        grid-template-columns: repeat(2,1fr);
+     }
+     #iles{
+        grid-column: auto;
+     }
+     #caraibes{
+        grid-column: 1/3;
+     }
+} 
+
+/* 768: tablette */
+@media all and (max-width:800px){
+    .conteneur{
+        width: 500px;
+    }
+    #flexbox-ville{
+        grid-template-columns: 1fr;
+    }
+    #tokyo{
+        grid-row: auto;
+    }
+    #caraibes{
+        grid-column:auto ;
+    }
+    #flexbox-foot{
+        flex-direction: column;
+        gap: 50px;
+    }
+    #logo-foot{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+/* 480: smartphone */
+@media all and (max-width:570px){
+    .conteneur{
+        width: 100%;
+    }
+    #bienvenue{
+        padding: 15px;
+    }
+
+}
+
+.bienvenue{
+    background-image: url("../images/chine.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    /* align-items: ;
+    flex-direction: ; */
+}
+.slogant{
+    display: block;
+    font-size: 30px;
+    font-family: "roboto", arial, sans-serif;
+}
+.top{
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.a{
+    text-decoration: none;
+}
+#tokyo{
+    background-image: url("https://th.bing.com/th/id/R.b7ae791349bdff9f424fc4c1f35c542c?rik=gVX4ROGFCqDXVQ&pid=ImgRaw&r=0");
+    grid-row: 1/3;
+    /* grid-column: 1/2; */
+}
+#iles{
+    background-image: url("https://th.bing.com/th/id/OIP.DKLuNAt-bQmJk15nOfEh_AHaET?w=252&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3");
+    grid-column: 2/4;  
+    /* grid-row: ;  */
+}
+#caraibes{
+    background-image: url("https://th.bing.com/th/id/OIP.nkC45399HNYiJoctZu1WdgHaE8?w=274&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3");
+}
+#flexbox-ville{
+    /* display: flex; */
+    display: grid;
+    grid-template-columuns: repeat(3,1fr)
+    gap: 30px;
+}
+#jamaique{
+    background-image: url("https://th.bing.com/th/id/OIP.1zohEQayRizRWM66rQ8qhQHaE8?w=248&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3");
+}
+.ville{
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+    min-height: 400px;
+    border: 3px solid white;
+    transition: all 0.2s;
+    border-radius: 30px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 0 0 30 black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
+   
+}
+.ville:hover {
+    border: 3px solid orangered;
+}
+/* font-weight: bold; /* pour mettre en gras ou modifier le poids de la la police  */
+/* text-decoration:underline/line-thought/overline;
+font-size: italic;  /*  pour modifier la taille de la police */
+ /* font-style: pour modifier le style (italic...) */
+/* element1 = applique element1 */
+/* element1, element2= applique a element1 et element2 */
+/* element0 element1= applique a element1s'il est dans element0 */ 
+
+
+
+/* LE RESPONSIVE DESIGN */
+@media screen {
+    
+}
